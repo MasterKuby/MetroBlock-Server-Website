@@ -82,6 +82,19 @@ body {
     color: var(--text-primary);
 }
 
+.logo-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
 .logo-icon {
     width: 32px;
     height: 32px;

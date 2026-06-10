@@ -11,26 +11,26 @@
             max-width: 1400px;
             margin: 4rem auto;
             padding: 2rem;
-            position: relative;
+            overflow-x: auto;
         }
         
         .timeline {
             position: relative;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: flex-start;
-            margin-top: 4rem;
-            padding: 2rem 0;
-            overflow-x: auto;
-            scroll-behavior: smooth;
+            margin-top: 2rem;
+            padding: 3rem 2rem;
+            min-width: 100%;
+            gap: 2rem;
         }
         
         .timeline::before {
             content: '';
             position: absolute;
-            top: 80px;
-            left: 0;
-            right: 0;
+            top: 100px;
+            left: 100px;
+            right: 100px;
             height: 4px;
             background: var(--accent-color);
             z-index: 1;
@@ -38,32 +38,30 @@
         
         .timeline-item {
             position: relative;
-            width: 300px;
+            width: 320px;
             text-align: center;
             z-index: 2;
             flex-shrink: 0;
-            margin: 0 1rem;
         }
         
         .timeline-item::before {
             content: '';
             position: absolute;
-            top: 66px;
+            top: 86px;
             left: 50%;
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
-            background: var(--accent-color);
-            border: 4px solid var(--bg-primary);
-            box-shadow: 0 0 0 4px var(--accent-color);
+            background: var(--bg-primary);
+            border: 4px solid var(--accent-color);
             transform: translateX(-50%);
             z-index: 3;
             transition: all 0.3s ease;
         }
         
         .timeline-item:hover::before {
-            transform: translateX(-50%) scale(1.3);
-            box-shadow: 0 0 0 6px var(--accent-color);
+            transform: translateX(-50%) scale(1.5);
+            background: var(--accent-color);
         }
         
         .timeline-content {
@@ -73,22 +71,23 @@
             padding: 1.5rem;
             box-shadow: 0 4px 6px var(--card-shadow);
             transition: all 0.3s ease;
-            margin-top: 2rem;
+            margin-top: 3rem;
+            text-align: left;
         }
         
         .timeline-item:hover .timeline-content {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 12px var(--card-shadow);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px var(--card-shadow);
             border-color: var(--accent-color);
         }
         
         .timeline-item h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
             color: var(--text-primary);
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: flex-start;
             gap: 0.75rem;
         }
         
@@ -233,42 +232,42 @@
         @media (max-width: 768px) {
             .timeline-container {
                 padding: 1rem;
+                overflow-x: auto;
             }
             
             .timeline {
-                padding: 0 1rem;
-                flex-direction: column;
-                align-items: flex-start;
+                padding: 2rem 1rem;
+                flex-direction: row;
+                overflow-x: auto;
+                justify-content: flex-start;
+                min-width: max-content;
             }
             
             .timeline::before {
-                top: 0;
-                left: 2rem;
-                right: auto;
-                width: 4px;
-                height: 100%;
+                top: 100px;
+                left: 50px;
+                right: 50px;
             }
             
             .timeline-item {
-                width: 100%;
-                margin: 1rem 0 1rem 2rem;
-                padding-bottom: 0;
+                width: 280px;
             }
             
             .timeline-item::before {
-                top: 1rem;
-                left: 0;
+                top: 86px;
                 width: 16px;
                 height: 16px;
             }
             
             .timeline-content {
-                margin-top: 0;
-                margin-left: 1rem;
+                margin-top: 3rem;
+                margin-left: 0;
+                text-align: left;
             }
             
             .timeline-item h3 {
-                font-size: 1.1rem;
+                font-size: 1rem;
+                justify-content: flex-start;
             }
             
             .timeline-item p {
@@ -280,8 +279,14 @@
             }
             
             .timeline-navigation {
-                justify-content: flex-start;
+                justify-content: center;
                 margin: 1rem 0;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            
+            .timeline-nav-btn {
+                flex-shrink: 0;
             }
             
             .hero-section {
@@ -300,24 +305,22 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-left">
-            <a href="../index.html" class="logo">
-                <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="20" width="60" height="60" rx="8" fill="#3b82f6"/>
-                    <rect x="30" y="30" width="40" height="40" rx="4" fill="#60a5fa"/>
-                    <rect x="35" y="35" width="30" height="30" rx="2" fill="#93c5fd"/>
-                </svg>
-                <span>MetroBlock Wiki</span>
-            </a>
-        </div>
+        <a href="../index.html" class="nav-left logo-link">
+            <svg class="logo-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="60" height="60" rx="8" fill="#3b82f6"/>
+                <rect x="30" y="30" width="40" height="40" rx="4" fill="#60a5fa"/>
+                <rect x="35" y="35" width="30" height="30" rx="2" fill="#93c5fd"/>
+            </svg>
+            <span>MetroBlock Wiki</span>
+        </a>
         <div class="nav-center">
-            <div class="search-container">
+            <div class="search-container" id="searchContainer">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"/>
                     <path d="m21 21-4.35-4.35"/>
                 </svg>
                 <input type="text" id="searchInput" placeholder="Search wiki..." class="search-input">
-                <kbd class="search-shortcut">Ctrl+K</kbd>
+                <kbd class="search-shortcut" id="searchShortcut">Ctrl+K</kbd>
             </div>
         </div>
         <div class="nav-right">
@@ -460,42 +463,66 @@
         </div>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
     <script>
-        // Timeline Navigation
-        document.addEventListener('DOMContentLoaded', () => {
-            const timelineNavBtns = document.querySelectorAll('.timeline-nav-btn');
-            const timelineItems = document.querySelectorAll('.timeline-item');
+// Timeline Navigation
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineNavBtns = document.querySelectorAll('.timeline-nav-btn');
+    const timelineItems = document.querySelectorAll('.timeline-item');
 
-            timelineNavBtns.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remove active class from all buttons
-                    timelineNavBtns.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    button.classList.add('active');
-                    
-                    // Hide all timeline items
-                    timelineItems.forEach(item => {
-                        item.style.display = 'none';
-                    });
-                    
-                    // Show the targeted timeline item
-                    const targetId = button.getAttribute('data-target');
-                    document.getElementById(targetId).style.display = 'block';
-                    
-                    // Update current status
-                    timelineItems.forEach(item => {
-                        item.classList.remove('current');
-                    });
-                    document.getElementById(targetId).classList.add('current');
-                });
-            });
-            
-            // Initially show all items
-            timelineItems.forEach(item => {
-                item.style.display = 'block';
-            });
+    function setCurrentTimelineItem(targetId) {
+        timelineNavBtns.forEach((btn) => {
+            btn.classList.toggle('active', btn.getAttribute('data-target') === targetId);
         });
-    </script>
+
+        timelineItems.forEach((item) => {
+            item.classList.toggle('current', item.id === targetId);
+        });
+
+        const targetItem = document.getElementById(targetId);
+        if (targetItem) {
+            targetItem.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest'
+            });
+        }
+    }
+
+    timelineNavBtns.forEach(button => {
+        button.addEventListener('click', () => {
+            setCurrentTimelineItem(button.getAttribute('data-target'));
+        });
+    });
+
+    const initialButton = document.querySelector('.timeline-nav-btn.active');
+    if (initialButton) {
+        setCurrentTimelineItem(initialButton.getAttribute('data-target'));
+    } else if (timelineItems.length > 0) {
+        setCurrentTimelineItem(timelineItems[0].id);
+    }
+});
+</script>
+
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" id="modalSearchInput" placeholder="Search the wiki..." class="modal-search-input">
+                <button class="close-modal" id="closeModal" aria-label="Close search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"/>
+                        <line x1="6" y1="6" x2="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-results" id="searchResults">
+                <div class="search-hint">Type to search wiki pages...</div>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
