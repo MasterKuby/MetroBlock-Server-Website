@@ -20,13 +20,13 @@
             </div>
         </div>
         <div class="nav-center">
-            <div class="search-container">
+            <div class="search-container" id="searchContainer">
                 <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"/>
                     <path d="m21 21-4.35-4.35"/>
                 </svg>
                 <input type="text" id="searchInput" placeholder="Search wiki..." class="search-input">
-                <kbd class="search-shortcut">Ctrl+K</kbd>
+                <kbd class="search-shortcut" id="searchShortcut">Ctrl+K</kbd>
             </div>
         </div>
         <div class="nav-right">
@@ -95,81 +95,105 @@
         </section>
 
         <section class="content-section">
-            <h2>Wiki Sections</h2>
-            <div class="card-grid">
-                <a href="pages/getting-started.html" class="content-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3>Getting Started</h3>
-                    <p>New to MetroBlock? Start here with installation guides and basic setup instructions.</p>
-                    <span class="card-link">Learn More →</span>
-                </a>
-
-                <a href="pages/features.html" class="content-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                        </svg>
-                    </div>
-                    <h3>Features & Mods</h3>
-                    <p>Explore all the features, mods, and customizations that make MetroBlock unique.</p>
-                    <span class="card-link">Explore Features →</span>
-                </a>
-
-                <a href="pages/notable-figures.html" class="content-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                    <h3>Notable Figures</h3>
-                    <p>Meet the community members and developers behind MetroBlock.</p>
-                    <span class="card-link">View Profiles →</span>
-                </a>
-
-                <a href="pages/server-info.html" class="content-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-                            <line x1="6" y1="6" x2="6.01" y2="6"/>
-                            <line x1="6" y1="18" x2="6.01" y2="18"/>
-                        </svg>
-                    </div>
-                    <h3>Server Information</h3>
-                    <p>Server IP, rules, guidelines, and everything you need to know about playing.</p>
-                    <span class="card-link">Server Info →</span>
-                </a>
-
-                <a href="pages/tutorials.html" class="content-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
-                    </div>
-                    <h3>Tutorials & Guides</h3>
-                    <p>Step-by-step tutorials and advanced guides for all skill levels.</p>
-                    <span class="card-link">Start Learning →</span>
-                </a>
-
-                <a href="pages/faq.html" class="content-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
-                            <line x1="12" y1="17" x2="12.01" y2="17"/>
-                        </svg>
-                    </div>
-                    <h3>FAQ & Support</h3>
-                    <p>Frequently asked questions and support resources for common issues.</p>
-                    <span class="card-link">Get Help →</span>
-                </a>
+    <h2>Wiki Sections</h2>
+    <div class="card-grid">
+        <a href="pages/getting-started.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
             </div>
-        </section>
+            <h3>Getting Started</h3>
+            <p>New to MetroBlock? Start here with installation guides and basic setup instructions.</p>
+            <span class="card-link">Learn More →</span>
+        </a>
+
+        <a href="pages/features.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+            </div>
+            <h3>Features & Mods</h3>
+            <p>Explore all the features, mods, and customizations that make MetroBlock unique.</p>
+            <span class="card-link">Explore Features →</span>
+        </a>
+
+        <a href="pages/notable-figures.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </div>
+            <h3>Notable Figures</h3>
+            <p>Meet the community members and developers behind MetroBlock.</p>
+            <span class="card-link">View Profiles →</span>
+        </a>
+
+        <a href="pages/server-info.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+                    <line x1="6" y1="6" x2="6.01" y2="6"/>
+                    <line x1="6" y1="18" x2="6.01" y2="18"/>
+                </svg>
+            </div>
+            <h3>Server Information</h3>
+            <p>Server IP, rules, guidelines, and everything you need to know about playing.</p>
+            <span class="card-link">Server Info →</span>
+        </a>
+
+        <a href="pages/tutorials.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                </svg>
+            </div>
+            <h3>Tutorials & Guides</h3>
+            <p>Step-by-step tutorials and advanced guides for all skill levels.</p>
+            <span class="card-link">Start Learning →</span>
+        </a>
+
+        <a href="pages/faq.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+            </div>
+            <h3>FAQ & Support</h3>
+            <p>Frequently asked questions and support resources for common issues.</p>
+            <span class="card-link">Get Help →</span>
+        </a>
+
+        <a href="pages/server-history.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 8v8m0-8V6m0 14v-2m0 0V8m0 12v-2m0 0V8"/>
+                </svg>
+            </div>
+            <h3>Server History</h3>
+            <p>Explore the evolution of MetroBlock from its humble beginnings to the current Infinite version.</p>
+            <span class="card-link">View Timeline →</span>
+        </a>
+
+        <a href="pages/downloads.html" class="content-card">
+            <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="17 8 12 3 7 8"/>
+                    <line x1="12" y1="3" x2="12" y2="15"/>
+                </svg>
+            </div>
+            <h3>Downloads</h3>
+            <p>Download the official MetroBlock server files for all versions.</p>
+            <span class="card-link">Get Files →</span>
+        </a>
+    </div>
+</section>
 
         <section class="community-section">
             <h2>Community Resources</h2>

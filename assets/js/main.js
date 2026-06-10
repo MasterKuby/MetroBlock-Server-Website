@@ -49,39 +49,50 @@ const modalSearchInput = document.getElementById('modalSearchInput');
 const searchModal = document.getElementById('searchModal');
 const closeModal = document.getElementById('closeModal');
 const searchResults = document.getElementById('searchResults');
+const searchContainer = document.getElementById('searchContainer');
+const searchShortcut = document.getElementById('searchShortcut');
 
 const wikiPages = [
-    {
-        title: 'Getting Started',
-        url: 'pages/getting-started.html',
-        description: 'Installation guides and basic setup instructions'
-    },
-    {
-        title: 'Features & Mods',
-        url: 'pages/features.html',
-        description: 'Explore all the features and customizations'
-    },
-    {
-        title: 'Notable Figures',
-        url: 'pages/notable-figures.html',
-        description: 'Meet the community members and developers'
-    },
-    {
-        title: 'Server Information',
-        url: 'pages/server-info.html',
-        description: 'Server IP, rules, and guidelines'
-    },
-    {
-        title: 'Tutorials & Guides',
-        url: 'pages/tutorials.html',
-        description: 'Step-by-step tutorials for all skill levels'
-    },
-    {
-        title: 'FAQ & Support',
-        url: 'pages/faq.html',
-        description: 'Frequently asked questions and support'
-    }
-];
+  {
+    title: 'Getting Started',
+    url: 'pages/getting-started.html',
+    description: 'Installation guides and basic setup instructions'
+  },
+  {
+    title: 'Features & Mods',
+    url: 'pages/features.html',
+    description: 'Explore all the features and customizations'
+  },
+  {
+    title: 'Notable Figures',
+    url: 'pages/notable-figures.html',
+    description: 'Meet the community members and developers'
+  },
+  {
+    title: 'Server Information',
+    url: 'pages/server-info.html',
+    description: 'Server IP, rules, and guidelines'
+  },
+  {
+    title: 'Tutorials & Guides',
+    url: 'pages/tutorials.html',
+    description: 'Step-by-step tutorials for all skill levels'
+  },
+  {
+    title: 'FAQ & Support',
+    url: 'pages/faq.html',
+    description: 'Frequently asked questions and support'
+  },
+  {
+    title: 'Server History',
+    url: 'pages/server-history.html',
+    description: 'Explore the evolution of MetroBlock from its humble beginnings to the current Infinite version'
+  },
+  {
+    title: 'Downloads',
+    url: 'pages/downloads.html',
+    description: 'Download the official MetroBlock server files for all versions'
+  }];
 
 function openSearchModal() {
     searchModal.classList.add('active');
@@ -111,15 +122,17 @@ function performSearch(query) {
         return;
     }
 
-    searchResults.innerHTML = filteredPages.map(page => `
-        <a href="${page.url}" class="search-result-item">
-            <h4>${page.title}</h4>
-            <p>${page.description}</p>
-        </a>
+    searchResults.innerHTML = filteredPages.map(page => `    
+    <a href="${page.url}" class="search-result-item">    
+        <h4>${page.title}</h4>    
+        <p>${page.description}</p>    
+    </a>    
     `).join('');
 }
 
 searchInput.addEventListener('click', openSearchModal);
+searchContainer.addEventListener('click', openSearchModal);
+searchShortcut.addEventListener('click', openSearchModal);
 modalSearchInput.addEventListener('input', (e) => {
     performSearch(e.target.value);
 });
@@ -137,7 +150,7 @@ document.addEventListener('keydown', (e) => {
         e.preventDefault();
         openSearchModal();
     }
-    
+
     if (e.key === 'Escape' && searchModal.classList.contains('active')) {
         closeSearchModal();
     }
