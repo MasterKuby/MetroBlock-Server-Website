@@ -51,7 +51,6 @@
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            cursor: pointer;
         }
         
         .download-section h2 .version-badge {
@@ -63,26 +62,7 @@
             font-weight: 600;
         }
         
-        .download-section h2::after {
-            content: '\u25BC';
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            transition: transform 0.3s ease;
-        }
-        
-        .download-section.active h2::after {
-            transform: rotate(180deg);
-        }
-        
         .download-items {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease, padding 0.5s ease;
-            padding: 0 0 0 1rem;
-        }
-        
-        .download-section.active .download-items {
-            max-height: 500px;
             padding: 1rem 0 1rem 1rem;
         }
         
@@ -310,68 +290,16 @@
                 <h2><span class="version-badge">Infinite</span> MetroBlock: Infinite</h2>
                 <div class="download-items">
                     <div class="download-item">
-                        <a href="#">
+                        <a href="https://github.com/MasterKuby/MetroBlock-Server-Website/releases/download/v1.0.0/MetroBlock-Infinite-v1.0.0.mrpack">
                             <span>MetroBlock: Infinite v1.0.0</span>
-                            <span class="download-size">247 MB</span>
+                            <span class="download-size">250 MB</span>
                             <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                                 <polyline points="17 8 12 3 7 8"/>
                                 <line x1="12" y1="3" x2="12" y2="15"/>
                             </svg>
                         </a>
-                        <span class="version-label">Release - April 2026</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock: Infinite v0.9.8</span>
-                            <span class="download-size">245 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Beta - March 2026</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock: Infinite v0.9.5</span>
-                            <span class="download-size">243 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Beta - February 2026</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock: Infinite v0.9.2</span>
-                            <span class="download-size">241 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Beta - January 2026</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock: Infinite v0.9.0</span>
-                            <span class="download-size">239 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Beta - December 2025</span>
+                        <span class="version-label">Beta - June 2026</span>
                     </div>
                 </div>
             </div>
@@ -391,32 +319,6 @@
                         </a>
                         <span class="version-label">Release - August 2023</span>
                     </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 5 v1.1.5</span>
-                            <span class="download-size">196 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Patch - July 2023</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 5 v1.0.0</span>
-                            <span class="download-size">194 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Release - June 2023</span>
-                    </div>
                 </div>
             </div>
             
@@ -434,45 +336,6 @@
                             </svg>
                         </a>
                         <span class="version-label">Patch - March 2023</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 4 v1.5.0</span>
-                            <span class="download-size">181 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Release - February 2023</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 4 v1.4.5</span>
-                            <span class="download-size">180 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Patch - January 2023</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 4 v1.3.0</span>
-                            <span class="download-size">178 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Release - December 2022</span>
                     </div>
                 </div>
             </div>
@@ -492,45 +355,6 @@
                         </a>
                         <span class="version-label">Release - October 2022</span>
                     </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 3 v1.7.5</span>
-                            <span class="download-size">163 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Patch - September 2022</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 3 v1.7.0</span>
-                            <span class="download-size">162 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Release - August 2022</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 3 v1.6.0</span>
-                            <span class="download-size">160 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Release - July 2022</span>
-                    </div>
                 </div>
             </div>
             
@@ -548,32 +372,6 @@
                             </svg>
                         </a>
                         <span class="version-label">Release - May 2022</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 2 v1.2.5</span>
-                            <span class="download-size">143 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Patch - April 2022</span>
-                    </div>
-                    
-                    <div class="download-item">
-                        <a href="#">
-                            <span>MetroBlock 2 v1.2.0</span>
-                            <span class="download-size">142 MB</span>
-                            <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="17 8 12 3 7 8"/>
-                                <line x1="12" y1="3" x2="12" y2="15"/>
-                            </svg>
-                        </a>
-                        <span class="version-label">Release - March 2022</span>
                     </div>
                 </div>
             </div>
@@ -600,11 +398,7 @@
                 <h3>Important Notes</h3>
                 <p>Before downloading any version of MetroBlock, please read these important notes:</p>
                 <ul>
-                    <li>Only download server files from official sources to ensure security and compatibility</li>
-                    <li>Always backup your world data before updating to a new version</li>
-                    <li>Some features may not be available in older versions due to server architecture changes</li>
-                    <li>For the best experience, we recommend using the latest version of MetroBlock: Infinite</li>
-                    <li>Server files are compatible with Minecraft 1.20.1 (Infinite) and 1.19.4 (MB1-MB5)</li>
+                    <li>For MetroBlock: Infinite, do not delete lithium.properties config or entityculling config.</li>
                 </ul>
                 <p><strong>For technical support or issues with downloads, please visit our Discord server.</strong></p>
             </div>
@@ -622,25 +416,7 @@
         </div>
     </footer>
 
-    <script>
-        // Download Section Toggle
-        document.addEventListener('DOMContentLoaded', () => {
-            const downloadSections = document.querySelectorAll('.download-section');
-            
-            downloadSections.forEach(section => {
-                const heading = section.querySelector('h2');
-                heading.addEventListener('click', () => {
-                    section.classList.toggle('active');
-                });
-            });
-            
-            // Ensure the current version section is open by default
-            const currentSection = document.querySelector('.download-section.current');
-            if (currentSection) {
-                currentSection.classList.add('active');
-            }
-        });
-    </script>
+
     
     <div class="search-modal" id="searchModal">
         <div class="search-modal-content">
